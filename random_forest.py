@@ -11,9 +11,8 @@ from sklearn.metrics import classification_report, confusion_matrix, accuracy_sc
 
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.datasets import make_classification
-train_features = pd.read_excel("C:/Users/sumed/Desktop/Spring20/Feb27/Mar6/TRAIN_Transpose033_16.xlsx", header=None)
-
-test_features = pd.read_excel("C:/Users/sumed/Desktop/Spring20/Feb27/Mar6/TEST_Transpose033_16.xlsx", header=None)
+train_features = pd.read_excel("./TRAIN_Transpose033_16.xlsx", header=None)
+test_features = pd.read_excel("./TEST_Transpose033_16.xlsx", header=None)
 
 train_labels = np.array(train_features[208])
 test_labels = np.array(test_features[208])
@@ -51,18 +50,13 @@ print(classification_report(test_labels,y_pred.round()))
 
 print("confusion_matrix----")
 print(confusion_matrix(test_labels,y_pred.round()))
-print('____________')
+
 print('Accuracy: ',accuracy_score(test_labels, pred.round()))
 
 print('TEST LABELS: ',test_labels)
-print('________')
-# print(y_pred)
 
+print("Prediction ", pred)
 
-print('..................')
-print(pred)
-print('...................')
-# print(train_labels)
 
 print(set(train_labels) - set(y_pred))
 
