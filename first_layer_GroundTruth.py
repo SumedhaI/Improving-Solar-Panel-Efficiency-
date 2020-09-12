@@ -34,8 +34,7 @@ for i in range(0,512):
         cat1 = w-1
     category = Matrix[cat2][cat1]
     print('category: ', category)
-    
-    print(i)
+   
     new_df = new_df.append({'sheet': i, 'category': category },  ignore_index=True)
 
 new_df.to_excel("C:/Users/sumed/Desktop/Spring20/Feb27/March22/data/GT_PV16_Train_____.xlsx")
